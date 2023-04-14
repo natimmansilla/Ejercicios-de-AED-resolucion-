@@ -1,0 +1,25 @@
+__author__ = 'natimmansillagithub'
+#titulo 
+print("***"*50)
+print("Titulo")
+print("***"*50)
+
+##Caso de prueba:
+
+#Carga de Datos
+print("")
+print()
+
+variable1 = input(": ")
+variable2 = input(": ")
+variable3 = input(": ")
+#fin de carga de datos
+
+#procesos
+
+#fin de los procesos
+
+#visualizacion de los resultados
+print()
+
+#fin
