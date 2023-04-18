@@ -1,0 +1,96 @@
+__author__ = 'natimmansillagithub'
+
+# titulo
+print("***"*50)
+print("\t\t\t\t\t\t\t\t\t\t\t\t\tcartas de truco")
+print("***"*50)
+
+# no hay carga de datos en este ejercicio
+
+# procesos
+# generacion de cartas para jugar al truco
+# (Se saco las cartas numero 8, 9 y 10, ya que estas no se utilizan para jugar al truco)
+"""palo = ("espada","basto")
+numero = (7,3)"""
+
+palo = ("espada","basto","oro","copa")
+numero = (1,2,3,4,5,6,7,11,12)
+palo_espada = ("espada")
+numero_espada = str(7)
+
+import random
+
+# creacion de tuplas para las cartas
+# como hago para que no me elija 3 cartas iguales del mismo palo y numero??
+carta1 = str(random.choice(numero)) , random.choice(palo)
+carta2 = str(random.choice(numero)) , random.choice(palo)
+carta3 = str(random.choice(numero)) , random.choice(palo)
+carta4 = (numero_espada , palo_espada)
+
+# Verificacion para saber si las 3 cartas son del mismo palo
+# Creacion de tuplas para separar los palos y los numeros en variables diferentes
+tupla_carta1 = carta1
+tupla_carta2 = carta2
+tupla_carta3 = carta3
+
+num_c1 = tupla_carta1[0]
+num_c2 = tupla_carta2[0]
+num_c3 = tupla_carta3[0]
+
+palo_c1 = tupla_carta1[1]
+palo_c2 = tupla_carta2[1]
+palo_c3 = tupla_carta3[1]
+
+# definir variable mayor
+mayor = None
+
+
+# Verificar si entre esas 3 cartas se encuentra el As de espadas = 7 de espada
+# if (carta1[0] == "7" and carta1[1] == "espada") or (carta2[0] == "7" and carta2[1] == "espada") or (carta3[0] == "7" and carta3[1] == "espada"):
+if numero_espada == num_c1 and palo_espada == palo_c1 or numero_espada == num_c2 and palo_espada == palo_c2 or numero_espada == num_c3 and palo_espada == palo_c3:
+    as_espadas = "el As de espadas se encuentra entre las 3 cartas"
+else:
+    as_espadas = "El As de espadas no se encuentra entre las 3 cartas"
+
+
+
+# Condicional para obtener la carta mas alta a partir de asumir que son del mismo palo
+if palo_c1 == palo_c2 == palo_c3:
+    if num_c1>num_c2 and num_c1>num_c3:
+        mismo_palo = "Las cartas son del mismo palo"
+        mayor = str("la mayor carta fue la primera con el valor:" + num_c1)
+    else:
+        if num_c2>num_c3:
+            mismo_palo = "Las cartas son del mismo palo"
+            mayor = str("La mayor carta fue la segunda con el valor:"+ num_c2)
+        else:
+            mismo_palo = "Las cartas son del mismo palo"
+            mayor = str("La mayor carta fue la tercera con el valor:" + num_c3)
+else:
+    mismo_palo = "Las cartas no son del mismo palo"
+    mayor = "no se pudo comparar las cartas ya que no son del mismo palo"
+# Fin del proceso
+
+# visualizacion de los resultados...
+print("Tus cartas fueron: ")
+
+# las cartas funcionan como tuplas, ya no puedo printear cartas
+print("primera carta:",num_c1,"de",palo_c1)
+print("segunda carta:",num_c2,"de",palo_c2)
+print("tercera carta:",num_c3,"de",palo_c3)
+print()
+
+
+# las cifras del len son siempre 3
+"""print(len(carta1))
+print(len(carta2))
+print(len(carta3))
+# muestra el palo adecuadamente
+print(palo_c1)
+print(palo_c2)
+print(palo_c3)"""
+
+# esto esta bien
+print(as_espadas)
+print(mismo_palo)
+print(mayor)
