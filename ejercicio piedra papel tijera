@@ -1,0 +1,42 @@
+# titulo
+print("*"*50)
+print("Juego de piedra, papel, tijera")
+print("*"*50)
+
+# carga de datos
+print("cargue un numero para empezar a jugar.Recuerde que piedra = 1, papel = 2 y tijera = 0")
+elec_num_jugador = int(input("cargue su numero para comenzar a jugar: "))
+
+
+#procesos
+# redefinicion de variables para eleccion del jugador a cadena de caracteres
+if elec_num_jugador == 1:
+    elec_jugador == "piedra"
+
+if elec_num_jugador == 2:
+    elec_jugador == "papel"
+
+if elec_num_jugador == 3:
+    elec_jugador == "tijera"
+
+import random
+
+tupla_elecciones = ("piedra","papel","tijera")
+
+elec_pc = random.choice(tupla_elecciones)
+
+# analisis de posibilidades
+if elec_jugador == elec_pc:
+    resultado = "Hubo empate"
+else:
+    if (elec_jugador == "papel" and elec_pc == "piedra") or (elec_jugador == "piedra" and elec_pc == "tijera") or (elec_jugador == "tijera" and elec_pc == "papel") :
+        resultado = "Gano el jugador"
+    else:
+        resultado = "Perdio el jugador"
+
+
+# visualizacion de los resultados
+print("tu eleccion fue:",elec_jugador)
+print("la eleccion de la compu fue:",elec_pc)
+print(resultado)
+
