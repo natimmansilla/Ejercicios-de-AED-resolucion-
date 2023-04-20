@@ -1,0 +1,33 @@
+# titulo
+print("*"*50)
+print("Orden de 3 numeros")
+print("*"*50)
+
+# carga de datos
+a = float(input("cargue el primer numero: "))
+b = float(input("cargue el segundo numero: "))
+c = float(input("cargue el tercer numero: "))
+
+#procesos
+if a>b and a>c:
+    z = a
+    if b>c:
+        y,x = b,c
+    else:
+        y,x = c,b
+else:
+    if b>c:
+        z = b
+        if a>c:
+            y,x = a,c
+        else:
+            y,x = c,a
+    else:
+        z = c
+        if a>b:
+            y,x = a,b
+        else:
+            y,x = b,a
+
+# visualizacion de los resultados
+print("el orden sera: ",x,y,z)
